@@ -37,6 +37,17 @@ ol, ul {
 	list-style: none;
 }
 
+form { 
+	max-width: 400px; 
+	margin: auto;
+}
+
+input, textarea {
+	width: 100%;
+	padding: 10px;
+	margin: 5px 0;
+}
+
 blockquote, q {
 	quotes: none;
 }
