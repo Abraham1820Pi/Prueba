@@ -172,31 +172,13 @@
 									<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 								</ul>
 								<h2>Formulario de Contacto</h2>
-    							<form id="contactForm">
-        							<input type="text" name="name" placeholder="Tu Nombre" required>
-        							<input type="email" name="email" placeholder="Tu Correo" required>
-        							<textarea name="message" rows="5" placeholder="Tu Mensaje" required></textarea>
-        							<button type="submit">Enviar</button>
-        							<p class="message"></p>
-    							</form>
-
-    						<script>
-        						document.getElementById("contactForm").addEventListener("submit", function(event) {
-            							event.preventDefault();
-            							let formData = new FormData(this);
-            
-            							fetch("send_email.php", {
-                							method: "POST",
-                							body: formData
-            							})
-            							.then(response => response.text())
-            							.then(data => {
-                							document.querySelector(".message").innerText = data;
-                							document.getElementById("contactForm").reset();
-            							})
-            							.catch(error => console.error("Error:", error));
-        						});
-    						</script>
+    								<form id="contactForm">
+        								<input type="text" name="name" placeholder="Tu Nombre" required>
+        								<input type="email" name="email" placeholder="Tu Correo" required>
+        								<textarea name="message" rows="5" placeholder="Tu Mensaje" required></textarea>
+        								<button type="submit">Enviar</button>
+        								<p class="message"></p>
+    								</form>
 							</section>
 
 						
@@ -210,6 +192,23 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
+			<script>
+        			document.getElementById("contactForm").addEventListener("submit", function(event) {
+            				event.preventDefault();
+            				let formData = new FormData(this);
+            
+            				fetch("send_email.php", {
+                				method: "POST",
+                				body: formData
+            				})
+            				.then(response => response.text())
+            				.then(data => {
+                				document.querySelector(".message").innerText = data;
+                				document.getElementById("contactForm").reset();
+            				})
+            				.catch(error => console.error("Error:", error));
+        			});
+    			</script>
 			<script src="assets/js/main.js"></script>
 
 	</body>
